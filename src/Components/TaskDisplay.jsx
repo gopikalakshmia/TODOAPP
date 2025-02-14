@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-function TaskDisplay({ task }) {
-    const [taskInput,setTaskInput]=useState();
-    const handleEdit=(identifier,id)=>{
+function TaskDisplay({ task,handleEditTask }) {
 
+    const handleEdit=(id)=>{
+        handleEditTask(id);
     }
 
 
@@ -13,9 +13,13 @@ function TaskDisplay({ task }) {
       <div className="justify-self-center">
         {task.map((item, index) => (
           <div key={index} className="border-1 border-amber-100 rounded-sm p-2 m-2 w-sm" >
-            <input type="text" value={item} onChange={(e)=>setTaskInput(e.target.value)} className="bg-gray-700 p-1  w-sm rounded-sm"/>
-           {item.task} 
-           <button className="border-1 border-gray-500 rounded-sm" onClick={()=>{handleEdit('edit',item.id)}}> Edit/save</button></div>
+            <div>  {item.task} </div>
+         <div>
+         <button className="border-1 border-gray-500 rounded-sm" onClick={()=>{handleEdit(item.id)}}> Edit</button>
+         <button className="border-1 border-gray-500 rounded-sm" onClick={()=>{handleEdit(item.id)}}> Delete</button>
+         </div>
+       
+           </div>
         ))}
       </div>
     </div>
