@@ -1,16 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-import Todo from './Components/Todo'
+import TaskDisplay from './Components/TaskDisplay';
+import Todo from './Components/Todo';
+import {  useState } from "react";
 
 function App() {
 
+  const [task,setTask]=useState([]);
+  const handleAddNewTask=(taskInput)=>{
+    setTask(prevtask=>[...prevtask,{id:Math.random()*100,task:taskInput}]);
+  }
+  const handleEditTask=(id,ChangedTaskInput)=>{
+    const unChangedTask=task.filter((item)=>item.id!==id);
+    setTask([...unChangedTask,{id:id,task:ChangedTaskInput}])
 
+  }
   return (
-    <>
-     <Todo/>
-    </>
+    <div className='bg-black text-white bg-cover object-cover'>
+     <Todo handleAddNewTask={handleAddNewTask} />
+     <TaskDisplay task={task} handleEditTask={handleEditTask}/>
+    </div>
   )
 }
 
