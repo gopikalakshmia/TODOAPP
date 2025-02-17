@@ -27,11 +27,12 @@ function TaskDisplay({
 
   return (
     <div>
-      <div className="justify-self-center ">
+      <div className=" ">
+        <div className="p-5"></div>
         {task.map((item, index) => (
           <div
             key={index}
-            className="border-1 border-amber-100 rounded-sm p-2 m-2 w-md "
+            className="border-1 border-gray-700 rounded-sm p-4 m-2 w-md flex flex-row"
           >
             <div>
               {visible && id === item.id ? (
@@ -40,9 +41,10 @@ function TaskDisplay({
                     type="text"
                     value={taskInput}
                     onChange={(e) => setTaskInput(e.target.value)}
+                    className="text-white border-1 border-gray-600 rounded-sm p-2"
                   />
                   {!item.completed && <button
-                    className="border-1 border-amber-500 rounded-sm m-2"
+                    className="border-1 border-amber-500 rounded-md m-2"
                     onClick={() => {
                       handleSave(item.id, "Edit");
                     }}
@@ -58,11 +60,11 @@ function TaskDisplay({
                     onChange={() => {
                       handleSave(item.id, "complete");
                     }}
-                    
+                    className="size-5 justify-start m-2 "
                   />
-                  <span className={`mr-5 ${item.completed? `line-through` :''}`}>{item.task}</span>
+                  <span className={`mr-5 text-xl mb-1 font-semibold  ${item.completed? `line-through` :''}`}>{item.task}</span>
                   {!item.completed && <button
-                    className="border-1 border-gray-500 rounded-sm m-1"
+                    className="border-1 border-gray-500 rounded-sm m-1 "
                     onClick={() => {
                       handleEdit(item.id, item.task);
                     }}

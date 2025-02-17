@@ -1,5 +1,6 @@
 
 import './App.css'
+import Header from './Components/Header';
 import TaskDisplay from './Components/TaskDisplay';
 import Todo from './Components/Todo';
 import {  useState } from "react";
@@ -27,7 +28,8 @@ function App() {
   }
 
   return (
-    <div className='bg-black text-white justify-self-center '>
+    <div className='bg-black text-white justify-self-center  border-lime-600 border-2 rounded-md p-20 m-10'>
+      <Header/>
      <Todo handleAddNewTask={handleAddNewTask} />
      <TaskDisplay task={task} handleEditTask={handleEditTask} handleDeleteTask={handleDeleteTask} />
     </div>
