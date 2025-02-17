@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 function Todo({ handleAddNewTask }) {
-  const [taskInput, setTaskInput] = useState();
+  const [taskInput, setTaskInput] = useState("");
   const [error,setError]=useState(false);
 
   const handleaddTask = () => {
@@ -18,8 +18,8 @@ function Todo({ handleAddNewTask }) {
     }
   };
   return (
-    <div className="justify-self-center text-white w-xl">
-      <div className="w-xl">
+    <div className="justify-self-center text-white">
+      <div className="">
         <input
           type="text"
           value={taskInput}

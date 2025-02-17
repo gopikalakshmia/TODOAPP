@@ -8,23 +8,27 @@ function TaskDisplay({
 }) {
   const [visible, setVisible] = useState(false);
   const [id, setId] = useState();
-  const [taskInput, setTaskInput] = useState();
-  const [error,setError]=useState(false);
+  const [taskInput, setTaskInput] = useState("");
+  const [error, setError] = useState(false);
   const handleEdit = (id, value) => {
     setTaskInput(value);
     setVisible(true);
     setId(id);
   };
   const handleSave = (id, identifier) => {
-    if(taskInput){
+    if (identifier === "complete") {//no need to check the validation for changing checkbox
       handleEditTask(id, taskInput, identifier);
       setVisible(false);
       setId();
+    } else {
+      if (taskInput) {
+        handleEditTask(id, taskInput, identifier);
+        setVisible(false);
+        setId();
+      } else {
+        setError(true);
+      }
     }
-else
-{
-setError(true);
-}
   };
 
   const handleDelete = (id) => {
@@ -50,15 +54,19 @@ setError(true);
                     required
                     className="text-white border-1 border-gray-600 rounded-sm p-2"
                   />
-                  {error&& <p className="text-red-800">Please fill the field</p>}
-                  {!item.completed && <button
-                    className="border-1 border-amber-500 rounded-md m-2"
-                    onClick={() => {
-                      handleSave(item.id, "Edit");
-                    }}
-                  >
-                    Save
-                  </button> }
+                  {error && (
+                    <p className="text-red-800">Please fill the field</p>
+                  )}
+                  {!item.completed && (
+                    <button
+                      className="border-1 border-amber-500 rounded-md m-2"
+                      onClick={() => {
+                        handleSave(item.id, "Edit");
+                      }}
+                    >
+                      Save
+                    </button>
+                  )}
                 </>
               ) : (
                 <>
@@ -70,19 +78,25 @@ setError(true);
                     }}
                     className="size-5 justify-start m-2 "
                   />
-                  <span className={`mr-5 text-xl mb-1 font-semibold  ${item.completed? `line-through` :''}`}>{item.task}</span>
-                  {!item.completed && <button
-                    className="border-1 border-gray-500 rounded-sm m-1 "
-                    onClick={() => {
-                      handleEdit(item.id, item.task);
-                    }}
+                  <span
+                    className={`mr-5 text-xl mb-1 font-semibold  ${
+                      item.completed ? `line-through` : ""
+                    }`}
                   >
-                    Edit
-                  </button>}
+                    {item.task}
+                  </span>
+                  {!item.completed && (
+                    <button
+                      className="border-1 border-gray-500 rounded-sm m-1 "
+                      onClick={() => {
+                        handleEdit(item.id, item.task);
+                      }}
+                    >
+                      Edit
+                    </button>
+                  )}
                 </>
               )}{" "}
-            
-            
               <button
                 className="border-1 border-gray-500 rounded-sm "
                 onClick={() => {
@@ -91,7 +105,7 @@ setError(true);
               >
                 Delete
               </button>
-              </div>
+            </div>
           </div>
         ))}
       </div>

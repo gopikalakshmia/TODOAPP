@@ -11,7 +11,7 @@ function App() {
   const [task,setTask]=useState([]);
   const [filteredTask,setFilteredTask]=useState([]);
   const handleAddNewTask=(taskInput)=>{
-    setTask(prevtask=>[...prevtask,{id:Math.floor(Math.random()*100)+1 ,task:taskInput,completed:false}]);
+    setTask(prevtask=>[...prevtask,{id:Math.floor(Math.random()*100)+1,task:taskInput,completed:false}]);
   }
 useEffect(()=>{
   setFilteredTask([...task]);
@@ -23,8 +23,11 @@ useEffect(()=>{
     console.log(editedTask);
     if(identifier==="Edit")
     setTask([...unChangedTask,{...editedTask,task:ChangedTaskInput}]);
-  if(identifier==="complete")
-  setTask([...unChangedTask,{...editedTask,completed:!editedTask.completed}]);
+  if(identifier==="complete"){
+    console.log("comple");
+    setTask([...unChangedTask,{...editedTask,completed:!editedTask.completed}]);
+  }
+
 
   }
   const handleDeleteTask=(id)=>{
