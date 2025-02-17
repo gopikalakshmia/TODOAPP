@@ -9,16 +9,22 @@ function TaskDisplay({
   const [visible, setVisible] = useState(false);
   const [id, setId] = useState();
   const [taskInput, setTaskInput] = useState();
+  const [error,setError]=useState(false);
   const handleEdit = (id, value) => {
     setTaskInput(value);
     setVisible(true);
     setId(id);
   };
   const handleSave = (id, identifier) => {
-    handleEditTask(id, taskInput, identifier);
-    setVisible(false);
-    setId();
-    console.log("unchecked")
+    if(taskInput){
+      handleEditTask(id, taskInput, identifier);
+      setVisible(false);
+      setId();
+    }
+else
+{
+setError(true);
+}
   };
 
   const handleDelete = (id) => {
@@ -41,8 +47,10 @@ function TaskDisplay({
                     type="text"
                     value={taskInput}
                     onChange={(e) => setTaskInput(e.target.value)}
+                    required
                     className="text-white border-1 border-gray-600 rounded-sm p-2"
                   />
+                  {error&& <p className="text-red-800">Please fill the field</p>}
                   {!item.completed && <button
                     className="border-1 border-amber-500 rounded-md m-2"
                     onClick={() => {
