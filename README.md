@@ -1,7 +1,4 @@
 100 Project challenge #1-TODOApp with React
-
-Here’s a README.md file for your Todo Task App:
-
 Todo Task App 📝
 
 A simple React Todo App to add, edit, mark as completed, and delete tasks. Built with React (useState) and styled using Tailwind CSS.
