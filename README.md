@@ -18,27 +18,27 @@ Features 🚀
 
 Tech Stack 🛠
 
-• React – Functional components & hooks (useState)
+	• React – Functional components & hooks (useState)
 
-• Tailwind CSS – Simple and responsive styling
+	• Tailwind CSS – Simple and responsive styling
 
 Installation & Setup ⚙️
 
-1. Clone the repository:
+	1. Clone the repository:
 
-   git clone https:https://github.com/gopikalakshmia/TODOAPP.git
+  		 git clone https:https://github.com/gopikalakshmia/TODOAPP.git
 
-   cd TODOAPP
+   		cd TODOAPP
 
-2. Install dependencies:
+	2. Install dependencies:
    
-   npm install
+   		npm install
 
-3. Start the development server:
+	3. Start the development server:
    
-   npm run dev
+   		npm run dev
 
-4. Open http://localhost:5173/ in your browser.
+	4. Open http://localhost:5173/ in your browser.
 
 
 Contributing 🤝
