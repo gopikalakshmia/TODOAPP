@@ -6,6 +6,7 @@ A simple React Todo App to add, edit, mark as completed, and delete tasks. Built
 Features 🚀
 
 ✅ Add Tasks – Quickly add new tasks to your list.
+
 ✅ Mark as Completed – Strike through completed tasks.
 ✅ Edit Tasks – Modify existing tasks.
 ✅ Delete Tasks – Remove tasks you no longer need.
