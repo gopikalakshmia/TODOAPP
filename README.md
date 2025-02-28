@@ -8,27 +8,35 @@ Features 🚀
 ✅ Add Tasks – Quickly add new tasks to your list.
 
 ✅ Mark as Completed – Strike through completed tasks.
+
 ✅ Edit Tasks – Modify existing tasks.
+
 ✅ Delete Tasks – Remove tasks you no longer need.
+
 ✅ Filter Tasks – View all, completed, or pending tasks.
+
 
 Tech Stack 🛠
 • React – Functional components & hooks (useState)
+
 • Tailwind CSS – Simple and responsive styling
 
 Installation & Setup ⚙️
 1. Clone the repository:
 
 git clone https:https://github.com/gopikalakshmia/TODOAPP.git
+
 cd TODOAPP
 
 2. Install dependencies:
+   
 npm install
 
-3. Start the development server:
+4. Start the development server:
+   
 npm run dev
 
-4. Open http://localhost:5173/ in your browser.
+6. Open http://localhost:5173/ in your browser.
 
 
 Contributing 🤝
