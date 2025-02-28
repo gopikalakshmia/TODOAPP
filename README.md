@@ -17,11 +17,13 @@ Features 🚀
 
 
 Tech Stack 🛠
+
 • React – Functional components & hooks (useState)
 
 • Tailwind CSS – Simple and responsive styling
 
 Installation & Setup ⚙️
+
 1. Clone the repository:
 
 git clone https:https://github.com/gopikalakshmia/TODOAPP.git
